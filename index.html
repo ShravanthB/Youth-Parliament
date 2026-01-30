@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shravanth B | Youth Elections</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0B0B0B;
+            color: white;
+        }
+
+        header {
+            background-color: #000;
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-bottom: 3px solid #39FF14;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 38px;
+            color: #39FF14;
+            overflow: hidden;
+            letter-spacing: 4px;
+        }
+
+        header h1 span {
+            opacity: 0;
+            display: inline-block;
+            transform: translateY(-20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #d1d5db;
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: fadeInP 1s forwards;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes fadeInP {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #111;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            font-size: 16px;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 6px;
+            width: 0;
+            height: 2px;
+            background: #39FF14;
+            transition: 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 60%;
+        }
+
+        nav a:hover {
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #111;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.15);
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #39FF14;
+        }
+
+        .container p {
+            text-align: center;
+            font-size: 16px;
+            max-width: 700px;
+            margin: 10px auto;
+        }
+
+        .section {
+            background-color: #000;
+            color: #fff;
+            padding: 60px 20px;
+            margin: 30px 0;
+            border-left: 5px solid #39FF14;
+            opacity: 0;
+            transform: scale(0.98);
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        .section-left {
+            transform: translateX(-50px) scale(0.98);
+        }
+
+        .section-right {
+            transform: translateX(50px) scale(0.98);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+
+        .section:hover {
+            box-shadow: 0 20px 40px rgba(57, 255, 20, 0.15);
+            transform: translateY(-5px) scale(1.01);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 0;
+            color: #39FF14;
+        }
+
+        .section p {
+            text-align: center;
+            font-size: 16px;
+            max-width: 700px;
+            margin: 10px auto;
+        }
+
+        .contact {
+            background-color: #111;
+            color: #fff;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 3px solid #39FF14;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-top: 0;
+            font-size: 26px;
+            color: #39FF14;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1 id="header-text">Your Voice. Your Wellbeing. Your School.</h1>
+    <p>Vote Shravanth B – Year 8 | Slough Youth Elections</p>
+</header>
+
+<nav>
+    <a href="#about">About Me</a>
+    <a href="#voice">Student Voice</a>
+    <a href="#mental">Wellbeing</a>
+    <a href="#environment">School Environment</a>
+    <a href="#contact">Communication</a>
+</nav>
+
+<div class="container" id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a Year 8 student running for Slough Youth Elections because I believe
+        students deserve to be heard, supported, and proud of their school.
+        I am confident, approachable, and ready to represent you.
+    </p>
+</div>
+
+<div class="section section-left" id="voice">
+    <h2>Student Voice</h2>
+    <p>
+        Every student has ideas, concerns, and suggestions that deserve to be heard and recognised, 
+        and I want to make sure they are. School is more than the lessons; 
+        it's about creating a community where everyone feels included and valued.
+        If I am voted into youth Parliament, I will listen to your ideas, take them seriously,
+        and bring them straight to the people who can make a difference. Whether it's a suggestion
+        for an event to celebrate someone or something, an improvement to school life, or
+        simply something you want to share, I want to hear it and make sure it counts.
+        Remember, "Voice doesn't end at the classroom door". 
+    </p>
+</div>
+
+<div class="section section-right" id="mental">
+    <h2>Mental Health and Wellbeing</h2>
+    <p>
+        Imagine a school where everyone feels understood, supported, and able to be themselves.
+        That's the school I want to help create. Mental health and wellbeing is not something to be overlooked,
+        for this reason, I am going to make sure that students have the tools, support and spaces to manage stress, 
+        share their experiences, and feel connected. Together, we can build a community that listens,
+        cares and looks after one another; a place where everyone feels valued and supported. 
+    </p>
+</div>
+
+<div class="section section-left" id="environment">
+    <h2>School Environment</h2>
+    <p>
+        Our school should be a place where everyone can learn, relax, and enjoy their time. I want to make sure 
+        we have the right resources, at the right times. I want to push for upgrades for nicer common areas, 
+        quiet zones for work and also creative spaces to broaden skills and hobbies to create larger and 
+        wider skillsets. Together, we can create an environment where everyone feels safe, fun and creative.
+        I'll listen to your ideas and work to turn them into spaces that make a real difference every day, 
+        without compromising on knowledge intake. 
+    </p>
+</div>
+
+<div class="contact" id="contact">
+    <div class="contact-content">
+        <h2>Communication</h2>
+        <p>
+            I believe in clear, honest updates. I will keep you informed about what
+            is happening and what progress is being made towards our commmon goal.
+        </p>
+        <p>Vote Shravanth B | Slough Youth Elections</p>
+    </div>
+</div>
+
+<script>
+    const header = document.getElementById('header-text');
+    const words = header.innerText.split(' ');
+    header.innerText = '';
+    words.forEach((word, i) => {
+        const span = document.createElement('span');
+        span.innerText = word + ' ';
+        span.style.animationDelay = `${i * 0.15}s`;
+        header.appendChild(span);
+    });
+
+    const sections = document.querySelectorAll('.section');
+
+    function checkSections() {
+        const triggerBottom = window.innerHeight * 0.8;
+        sections.forEach((section, index) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < triggerBottom && sectionTop + section.offsetHeight > 0) {
+                section.style.transitionDelay = `${index * 0.15}s`;
+                section.classList.add('visible');
+            } else {
+                section.classList.remove('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkSections);
+    window.addEventListener('load', checkSections);
+</script>
+
+</body>
+</html>
