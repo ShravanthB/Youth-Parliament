@@ -103,25 +103,74 @@
             transform: scale(1.05);
         }
 
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
+        .card-grid {
+            max-width: 1100px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            padding: 0 20px;
+        }
+
+        .flip-card {
+            background: transparent;
+            perspective: 1000px;
+            height: 260px;
+        }
+
+        .flip-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-front,
+        .flip-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 25px;
             background-color: #111;
-            padding: 30px;
-            border-radius: 10px;
             box-shadow: 0 4px 15px rgba(57, 255, 20, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
         }
 
-        .container h2 {
-            text-align: center;
+        .flip-front h2,
+        .flip-back h2 {
             color: #39FF14;
+            margin-bottom: 10px;
         }
 
-        .container p {
-            text-align: center;
-            font-size: 16px;
-            max-width: 700px;
-            margin: 10px auto;
+        .flip-front p {
+            color: #d1d5db;
+        }
+
+        .flip-back {
+            transform: rotateY(180deg);
+            background-color: #000;
+        }
+
+        @media (max-width: 900px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .section {
@@ -197,56 +246,121 @@
 </header>
 
 <nav>
-    <a href="#about">About Me</a>
+    <a href="#about">About</a>
     <a href="#voice">Student Voice</a>
     <a href="#mental">Wellbeing</a>
     <a href="#environment">School Environment</a>
     <a href="#contact">Communication</a>
 </nav>
 
-<div class="container" id="about">
-    <h2>About Me</h2>
-    <p>
-        I am a Year 8 student running for Slough Youth Elections because I believe
-        students deserve to be heard, supported, and proud of their school.
-        I am confident, approachable, and ready to represent you.
-    </p>
+<div class="card-grid" id="about">
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <h2>About Me</h2>
+                <p>Who I am</p>
+            </div>
+            <div class="flip-back">
+                <h2>About Me</h2>
+                <p>
+                    I am a Year 8 student running for Slough Youth Elections because I believe
+                    students deserve to be heard, supported, and proud of their school.
+                    I am confident, approachable, and ready to represent you.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <h2>Why I’m Running</h2>
+                <p>My motivation</p>
+            </div>
+            <div class="flip-back">
+                <h2>Why I’m Running</h2>
+                <p>
+                    I believe student voices should lead change and not be ignored.
+                    I want to help students feel included in decisions that affect
+                    their school life and wellbeing.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <h2>What I Stand For</h2>
+                <p>My values</p>
+            </div>
+            <div class="flip-back">
+                <h2>What I Stand For</h2>
+                <p>
+                    Fairness, respect, inclusion, and wellbeing.
+                    I believe everyone deserves to feel safe, valued,
+                    and confident to share their ideas.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="flip-front">
+                <h2>My Promise</h2>
+                <p>My commitment</p>
+            </div>
+            <div class="flip-back">
+                <h2>My Promise</h2>
+                <p>
+                    I promise to listen, speak up for students,
+                    and keep you informed while working to turn
+                    ideas into real improvements.
+                </p>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <div class="section section-left" id="voice">
     <h2>Student Voice</h2>
     <p>
-        Every student has ideas, concerns, and suggestions that deserve to be heard and recognised, 
-        and I want to make sure they are. School is more than the lessons; 
-        it's about creating a community where everyone feels included and valued.
-        If I am voted into youth Parliament, I will listen to your ideas, take them seriously,
-        and bring them straight to the people who can make a difference. Whether it's a suggestion
-        for an event to celebrate someone or something, an improvement to school life, or
-        simply something you want to share, I want to hear it and make sure it counts.
-        Remember, "Voice doesn't end at the classroom door". 
+        Every student has ideas, concerns, and suggestions that deserve to be heard 
+        and recognised, and I want to make sure they are. School is more than the
+        lessons; it's about creating a community where everyone feels included and 
+        valued. If I am voted into youth Parliament, I will listen to your ideas,
+        take them seriously, and bring them straight to the people who can make
+        a difference. Whether it's a suggestion for an event to celebrate someone
+        or something, an improvement to school life, or simply something you want 
+        to share, I want to hear it and make sure it counts. Remember, " Your voice doesn't end at the classroom door".
     </p>
 </div>
 
 <div class="section section-right" id="mental">
     <h2>Mental Health and Wellbeing</h2>
     <p>
-        Imagine a school where everyone feels understood, supported, and able to be themselves.
-        That's the school I want to help create. Mental health and wellbeing is not something to be overlooked,
-        for this reason, I am going to make sure that students have the tools, support and spaces to manage stress, 
-        share their experiences, and feel connected. Together, we can build a community that listens,
-        cares and looks after one another; a place where everyone feels valued and supported. 
+        Imagine a school where everyone feels understood, supported, and able to be
+        themselves. That's the school I want to help create. Mental health and wellbeing
+        is not something to be overlooked, for this reason, I am going to make sure that
+        students have the tools, support and spaces to manage stress, share their experiences,
+        and feel connected. Together, we can build a community that listens, cares and
+        looks after one another; a place where everyone feels valued and supported.
     </p>
 </div>
 
 <div class="section section-left" id="environment">
     <h2>School Environment</h2>
     <p>
-        Our school should be a place where everyone can learn, relax, and enjoy their time. I want to make sure 
-        we have the right resources, at the right times. I want to push for upgrades for nicer common areas, 
-        quiet zones for work and also creative spaces to broaden skills and hobbies to create larger and 
-        wider skillsets. Together, we can create an environment where everyone feels safe, fun and creative.
-        I'll listen to your ideas and work to turn them into spaces that make a real difference every day, 
-        without compromising on knowledge intake. 
+        Our school should be a place where everyone can learn, relax, and enjoy their time.
+        I want to make sure we have the right resources, at the right times. I want to push
+        for upgrades for nicer common areas, quiet zones for work and also creative spaces
+        to broaden skills and hobbies to create larger and wider skillsets. Together, we 
+        can create an environment where everyone feels safe, fun and creative. I'll listen
+        to your ideas and work to turn them into spaces that make a real difference every 
+        day, without compromising on knowledge intake.
     </p>
 </div>
 
@@ -254,8 +368,9 @@
     <div class="contact-content">
         <h2>Communication</h2>
         <p>
-            I believe in clear, honest updates. I will keep you informed about what
-            is happening and what progress is being made towards our commmon goal.
+            I believe in clear and honest communication.
+            I will keep students informed about progress
+            and updates towards our shared goals.
         </p>
         <p>Vote Shravanth B | Slough Youth Elections</p>
     </div>
